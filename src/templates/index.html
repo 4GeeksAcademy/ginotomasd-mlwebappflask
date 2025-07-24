@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Amazon Stock Predictor</title>
+</head>
+<body>
+    <h2>📈 Predict Amazon's Closing Price</h2>
+    <form method="post" action="/predict">
+        <label>Open:</label>
+        <input type="number" step="any" name="Open" required><br><br>
+        <label>High:</label>
+        <input type="number" step="any" name="High" required><br><br>
+        <label>Low:</label>
+        <input type="number" step="any" name="Low" required><br><br>
+        <label>Volume:</label>
+        <input type="number" name="Volume" required><br><br>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+        <h3>📊 Predicted Close Price: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
